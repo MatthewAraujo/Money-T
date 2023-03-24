@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 import SearchForm from "./components/SearchForm";
 import {
   PriceHightlight,
   TransactionContainer,
   TransactionTable,
 } from "./style";
+
 export function Transactions() {
+  const { transactions } = useContext(TransactionsContext);
+
   return (
     <div>
       <Header />
@@ -17,29 +21,21 @@ export function Transactions() {
         <SearchForm />
         <TransactionTable>
           <tbody>
-            <tr>
-              <td width="50%"> Desevolvimento de site</td>
-              <td>
-                <PriceHightlight variant="income">
-                  {" "}
-                  R$ 12.000,00
-                </PriceHightlight>
-              </td>
-              <td>Venda</td>
-              <td> 12/12/2020</td>
-            </tr>
-            <tr>
-              <td width="50%"> Hamburguer</td>
-              <td>
-                {" "}
-                <PriceHightlight variant="outcome">
-                  {" "}
-                  R$ -12.000,00
-                </PriceHightlight>
-              </td>
-              <td>Alimentação</td>
-              <td> 12/12/2020</td>
-            </tr>
+            {transactions.map((transaction) => {
+              return (
+                <tr key={transaction.id}>
+                  <td width="50%">{transaction.description}</td>
+                  <td>
+                    <PriceHightlight variant={transaction.type}>
+                      {" "}
+                      {transaction.price}
+                    </PriceHightlight>
+                  </td>
+                  <td>{transaction.category}</td>
+                  <td>{transaction.createdAt}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </TransactionTable>
       </TransactionContainer>
