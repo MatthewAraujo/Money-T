@@ -39,6 +39,14 @@
       "type": "outcome",
       "createdAt": "2023-03-27T19:10:16.913Z",
       "id": 5
+    },
+    {
+      "description": "desenvolvimento App",
+      "price": 2000,
+      "category": "Aprender",
+      "type": "income",
+      "createdAt": "2023-03-27T20:06:55.448Z",
+      "id": 6
     }
   ]
 }
