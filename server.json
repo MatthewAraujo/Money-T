@@ -47,6 +47,22 @@
       "type": "income",
       "createdAt": "2023-03-27T20:06:55.448Z",
       "id": 6
+    },
+    {
+      "description": "Pizza",
+      "price": 79,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-03-27T20:47:01.657Z",
+      "id": 7
+    },
+    {
+      "description": "Chiclete",
+      "price": 2,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-03-27T20:48:34.533Z",
+      "id": 8
     }
   ]
 }
